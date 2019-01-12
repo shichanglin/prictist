@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        asdasdfasdfasdfa
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $div = $("div1")
+        /*将 jq对象 装换原生对象
+                -$div.get(0)
+                -$div[0]
+          将 原生对象转换成jq
+                $(element)
+           */
+        // var oDiv = document.getElementById('div1');
+
+        $div[0].innerHTML = "22222";
+    </script>
+</body>
+
+</html>
