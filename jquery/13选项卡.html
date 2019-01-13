@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul li {
+            list-style: none;
+            width: 50px;
+            height: 20px;
+            background: #ccc;
+            float: left;
+            padding-left: 3px;
+            cursor: pointer;
+            border-left: 1px solid #fff;
+        }
+
+        .active {
+            background: burlywood;
+        }
+
+        .tab-box div {
+            border: 1px solid #000;
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+
+        .tab-box .aa {
+            position: absolute;
+            display: block;
+            left: 49px;
+            top: 38px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="active">时事</li>
+        <li>体育</li>
+        <li>娱乐</li>
+    </ul>
+    <div class="tab-box">
+        <div class="aa">时事</div>
+        <div>体育</div>
+        <div>娱乐</div>
+    </div>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $("li").on("click", function () {
+            // $("li").removeClass("active");
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".tab-box div").eq($(this).index()).addClass('aa').siblings().removeClass('aa');
+            //index()返回索引
+
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

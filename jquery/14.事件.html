@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+    </ul>
+    <input id="text">
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 涉及到后生成元素时用事件委托  找一个已经存在的父元素委托
+        // $("ul").on('click', "li", function () {
+        //     console.log($(this).html());
+        // })
+        // $("#btn").on('click', function () {
+        //     $('ul').append('<li>' + Math.random() + '</li>');
+
+        // })
+        // $('#text').trigger('focus');  //获取焦点
+        //获
+
+        $('#text').on('focus', function () {
+            $(this).css('background', 'pink');
+
+        })
+        // $('#text').trigger('focus');
+        // $('#text').triggerHandler('foucs');
+
+        $('#btn').hover(function () { 
+            $(this).css('background',"red")
+         },function(){
+             $(this).css('background',"green");
+         })
+
+
+    </script>
+</body>
+
+</html>
