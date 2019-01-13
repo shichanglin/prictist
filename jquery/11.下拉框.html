@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #left {
+            height: 200px;
+            width: 100px;
+        }
+
+        #right {
+            height: 200px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select id="left" multiple="multiple">
+        <option value="1">11</option>
+        <option value="2">22</option>
+        <option value="3">33</option>
+        <option value="4">44</option>
+        <option value="5">55</option>
+        <option value="6">66</option>
+        <option value="7">77</option>
+    </select>
+        <button id="addonly">AddOne</button>
+        <button id="addall ">AddAll</button>
+    <select id="right" multiple="multiple">
+        <option value="88">88</option>
+    </select>
+        <button id="delonly">DeleOnly</button>
+        <button id="delall">DeleAll</button>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $("#addonly").on("click", function () {
+            $("#left option:selected").appendTo("#right");
+            $("#right option").prop("selected", false);
+
+        })
+        $("#addall").on("click", function () {
+            $("#left option").appendTo("#right");
+            $("#right option").prop("selected", false);
+
+        })
+
+        $("#delonly").on("click", function () {
+            $("#right option:selected").appendTo("#left");
+            $("#left option").prop("selected", false);
+
+        })
+        $("#delall").on("click", function () {
+            $("#right option").appendTo("#left");
+            $("#left option").prop("selected", false);
+
+        })
+
+        $("#left").on("dblclick", function () {
+            $("#left option:selected").appendTo("#right");
+            $("#right option").prop("selected", false);
+
+        })
+        $("#right").on("dblclick", function () {
+            $("#right option:selected").appendTo("#left");
+            $("#left option").prop("selected", false);
+
+        })
+
+    </script>
+</body>
+
+</html>
