@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            background:red;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="div1" class="active">
+        hahahha
+    </div>
+    <button id="btn">切换</button>
+    <script src='jquery-1.12.4.js'></script>
+
+    <script>
+
+
+        $("#div1").css({
+            background:"red",
+            color:"#fff",
+            fontSize:16,
+            height:200
+
+
+        })
+        // $('#btn').on('click', function () {
+        //     $("#div1").toggleClass("active");
+        // })//toggleclass自动判断 翻转
+
+    </script>
+
+</body>
+
+</html>
