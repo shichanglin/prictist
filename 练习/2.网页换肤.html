@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            height: 14px;
+            width: 14px;
+            list-style: none;
+            float: left;
+            margin-right: 10px;
+            background-image: url(theme.gif);
+            background-repeat: no-repeat;
+
+        }
+
+        ul {
+            overflow: hidden;
+
+        }
+
+        #container {
+
+            margin: 50px auto;
+        }
+
+        .news {
+            width: 100px;
+            height: 40px;
+            background: #ff0000;
+            float: left;
+            margin-top: 30px;
+            margin-right: 20px;
+        }
+
+        li:nth-child(2) {
+            background-position: -100px 0;
+
+        }
+
+        li:nth-child(3) {
+            background-position: -80px 0;
+
+        }
+
+        li:nth-child(4) {
+            background-position: -60px 0;
+
+        }
+
+        li:nth-child(5) {
+            background-position: -40px 0;
+
+        }
+
+        li:nth-child(6) {
+            background-position: -20px 0;
+
+        }
+
+        li:nth-child(1).active {
+            background-position: 0 -15px;
+
+        }
+
+        li:nth-child(2).active {
+            background-position: -100px -15px;
+
+        }
+
+        li:nth-child(3).active {
+            background-position: -80px -15px;
+
+        }
+
+        li:nth-child(4).active {
+            background-position: -60px -15px;
+
+        }
+
+        li:nth-child(5).active {
+            background-position: -40px -15px;
+
+        }
+
+        li:nth-child(6).active {
+            background-position: -20px -15px;
+
+        }
+
+        .bg0 {
+            background: #999999;
+        }
+
+        .bg1 {
+            background: #BB3BD9;
+        }
+
+        .bg2 {
+            background: #E31559;
+        }
+
+        .bg3 {
+            background: #08BECE;
+
+        }
+
+        .bg4 {
+            background: #FBA60A;
+
+        }
+
+        .bg5 {
+            background: #AFD400;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="skin">
+            <li id="skin_0" title="灰色" class="active"></li>
+            <li id="skin_1" title="紫色"></li>
+            <li id="skin_2" title="红色"></li>
+            <li id="skin_3" title="天蓝色"></li>
+            <li id="skin_4" title="橙色"></li>
+            <li id="skin_5" title="淡绿色"></li>
+        </ul>
+    </div>
+    <div class="news bg0">
+        <h1>时事</h1>
+    </div>
+    <div class="news bg0">
+        <h1>娱乐</h1>
+    </div>
+    </div>
+    <script src="../jquery/jquery-1.12.4.js"></script>
+    <script>
+        $("li").on('click', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $(this).index();
+            $('.news').attr('class', 'news bg' + $(this).index());
+        })
+    </script>
+
+
+</body>
+
+</html>

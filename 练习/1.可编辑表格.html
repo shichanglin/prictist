@@ -11,7 +11,8 @@
 
         table {
             border: 1px solid black;
-            border-collapse: collapse;
+            border-collapse: collapse; /* 清除默认表格的空隙 */
+            
             width: 400px;
         }
 
@@ -37,6 +38,8 @@
         <thead>
             <tr>
                 <th colspan="2"> 鼠标点击表格就可以编辑</th>
+                <!-- colspan   合并单元格
+                 -->
             </tr>
         </thead>
         <tbody>
@@ -78,6 +81,7 @@
                 if (e.which == 13) {
                     var $html = $(this).val();
                     //this 是input
+                    //td  加html后取到内容
                     $(this).parent().html($html);
 
                 }
