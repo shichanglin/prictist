@@ -73,12 +73,12 @@
 <body>
     <ul id="container">
         <div id="img-box">
-            <img src="img/1.jpg" alt="">
-            <img src="img/2.jpg" alt="">
-            <img src="img/3.jpg" alt="">
-            <img src="img/4.jpg" alt="">
-            <img src="img/5.jpg" alt="">
-            <img src="img/1.jpg" alt="">
+            <img src="../jquery/10_轮播图/img/1.jpg" alt="">
+            <img src="../jquery/10_轮播图/img/2.jpg" alt="">
+            <img src="../jquery/10_轮播图/img/3.jpg" alt="">
+            <img src="../jquery/10_轮播图/img/4.jpg" alt="">
+            <img src="../jquery/10_轮播图/img/5.jpg" alt="">
+            <!-- <img src="img/1.jpg" alt=""> -->
         </div>
         <ul id="btn-box">
             <li class="selected">1</li>
@@ -92,24 +92,37 @@
             <li id="next">&gt;</li>
         </ul>
         </div>
-        <script src="../7_网上商城/scripts/jquery.min.js"></script>
+        <script src="../jquery/jquery-1.12.4.js"></script>
         <script>
-            var left = $("#img-box").position().left;
-            $('#btn-box li').on('click', function () {
-                $(this).addClass('selected').siblings().removeClass('selected');
-                var $img = $(this).index();
-                if (left == -3750) {
+            var inow = 0;
+            $("#btn-box li").on("click", function () {
+                change($(this).index());
+            })
+            $("#next").on("click", function () {
+                inow++;
+                if (inow == $("img").length) {
+                    inow = 0;
 
-
-                    $("#img-box img").children($img).css('left', -750 * $img);
                 }
+                change(inow);
+            })
+            $("#prev").on("click",function(){
+                inow--;
+                if(inow == -1){
+                    inow = $("img").length - 1;
 
-
+                }
+                change(inow);
 
             })
+            function change(index) {
 
+                $("#btn-box li").eq(index).addClass("selected").siblings().removeClass('selected');
+                $("#img-box").stop(true, false).animate({
+                    left: -index * $("img").width()
+                }, 1000)
+            }
         </script>
-
 </body>
 
 </html>
